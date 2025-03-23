@@ -1,30 +1,33 @@
-# 🤖 AI Interaction with Reinforcement Learning 🏆
+# **AI Interaction 🤖🚀**
 
-This repository contains the Jupyter Notebook `AI_Interaction.ipynb`, which leverages reinforcement learning to automate web-based tasks.
+## **Overview**  
+This project leverages reinforcement learning for AI-based interactions using `gymnasium`, `stable-baselines3`, and `Gradio`. The AI is trained using the PPO algorithm to optimize actions in a simulated environment.  
 
-## 📜 Description
-The notebook defines a custom AI environment using `gymnasium`, trains an agent using `stable-baselines3` (PPO algorithm), and provides an interactive UI using `Gradio`.
+## **Tools & Libraries Used 🛠️**  
+- **Gymnasium** – Environment simulation  
+- **Stable-Baselines3** – Reinforcement learning (PPO)  
+- **Torch** – Deep learning computations  
+- **Gradio** – Interactive UI for testing  
+- **NumPy** – Numerical processing  
 
-## 🛠️ Tools & Libraries Used
-- 🎮 **Gymnasium** - For creating reinforcement learning environments
-- 🏆 **Stable-Baselines3 (PPO)** - For training AI agents
-- 🔥 **Torch** - For deep learning computations
-- 📊 **NumPy** - For numerical processing
-- 🎨 **Gradio** - For interactive UI
+## **Installation & Setup ⚙️**  
+Run the following command to install dependencies:  
+```bash
+pip install gymnasium stable-baselines3 torch gradio numpy
+```
 
-## 📝 Sample Code
+## **Usage 🚀**  
+Load the notebook and execute the training script to see AI interactions in action. Modify the environment to customize tasks!  
+
+## **Example Code 📝**  
 ```python
 import gymnasium as gym
 from stable_baselines3 import PPO
-import numpy as np
 
-class WebAutomationEnv(gym.Env):
-    def __init__(self):
-        super(WebAutomationEnv, self).__init__()
-        self.state = 0
-        self.action_space = gym.spaces.Discrete(3)
-        self.observation_space = gym.spaces.Discrete(10)
+env = gym.make("CartPole-v1")
+model = PPO("MlpPolicy", env, verbose=1)
+model.learn(total_timesteps=10000)
 ```
 
-## 📜 License
-This project is licensed under the MIT License. 📄
+## **License 📜**  
+This project is under the MIT License.  
